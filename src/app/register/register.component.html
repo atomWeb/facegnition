@@ -1,0 +1,65 @@
+<section class="pageheader">
+  <div class="example-label">
+    Registrar personas en la aplicación.
+  </div>
+</section>
+<mat-divider></mat-divider>
+<mat-card class="register-page">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Datos de registro.</mat-card-title>
+    <mat-card-subtitle>
+        Suba una foto en que se vea claramente el rostro de la persona y rellene el resto de datos.
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div *ngIf="base64Img; else fakeImage" class="thumbnails">
+      <img [src]="base64Img" alt="" style="height:170px">
+    </div>
+    <ng-template #fakeImage>
+      <div class="thumbnails">
+        <img src="../../assets/add_photo.jpg" alt="" style="height:170px">
+      </div>
+    </ng-template>
+
+    <form class="register-form data-form" [formGroup]="regForm" (ngSubmit)="onSubmit()">
+
+      <input type="file" class="file-input" accept="image/jpeg"
+        formControlName="image" (change)="handleFileInput($event)" #fileUpload>
+      <div class="file-upload">
+        <mat-form-field>
+          <input matInput [disabled]="true" [value]="fileName">
+        </mat-form-field>
+        <button type="button" mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+
+      <mat-form-field>
+        <input matInput name="nombre" placeholder="Nombre" formControlName="nombre" #name/>
+        <mat-hint align="end">
+          {{ name.value.length }} / 23
+        </mat-hint>
+        <mat-error *ngIf="regForm.controls['nombre'].errors?.required">Nombre obligatorio.</mat-error>
+      </mat-form-field>
+      <mat-slide-toggle name="notify" formControlName="notify">
+        Lanzar notificación al validar a esta persona.
+      </mat-slide-toggle>
+      <mat-card-actions>
+        <button mat-raised-button type="button" (click)="resetForm()" [disabled]="!regForm.dirty">
+          Limpiar
+        </button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!regForm.valid">
+            Registrar
+        </button>
+      </mat-card-actions>
+    </form>
+    <!-- <div>
+      {{ regForm.value | json }}
+    </div>
+    <div>
+      {{ regForm.valid }}
+    </div> -->
+  </mat-card-content>
+</mat-card>

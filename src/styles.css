@@ -1,0 +1,73 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+section.pageheader {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.example-label {
+  font-size: 18px;
+  margin-left: 8px;
+  min-width: 120px;
+  padding: 8px 0;
+}
+
+.ok-snackbar {
+  background: #00ff7f;
+}
+
+.coral-snackbar {
+  background: #ff7f50;
+}
+
+.ok-snackbar span {
+  color: #4169e1;
+  white-space: pre-wrap
+}
+.coral-snackbar span {
+  color: #fff;
+}
+
+.coral-snackbar button > span,
+.ok-snackbar button > span {
+  color: #191970;
+}
+
+.register-page {
+  max-width: 400px;
+  margin: 30px auto 0 auto;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.thumbnails img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.thumbnails {
+  text-align: center;
+}
+
+.thumbnails img {
+  display: inline-block;
+  float: none; /* this is the part that makes it work */
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 4px; /* Rounded border */
+  padding: 5px; /* Some padding */
+  /* width: 150px;  */
+  height: 170px;
+}

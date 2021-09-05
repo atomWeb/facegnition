@@ -1,0 +1,21 @@
+<section class="pageheader">
+  <div class="example-label">Listar personas registradas.</div>
+  <!-- <div>
+    <button mat-raised-button color="accent" (click)="listUsers()">
+      Listar
+    </button>
+  </div> -->
+</section>
+<mat-divider></mat-divider>
+<section class="users">
+  <app-registered-user
+    *ngFor="let reguser of listRegUsers$ | async"
+    [registeredUser]="reguser"
+  >
+  </app-registered-user>
+</section>
+<section class="users">
+  <button (click)="verMas()" color="primary" mat-stroked-button *ngIf="vermas">Ver más...
+    <mat-icon>arrow_circle_down</mat-icon>
+  </button>
+</section>

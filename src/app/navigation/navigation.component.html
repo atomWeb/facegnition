@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="navigateTo('/validate')">
+          <mat-icon class="material-icons md-36 blueb5">verified</mat-icon>
+          <span class="menu-title">Validar</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('/register')">
+            <mat-icon class="material-icons md-36 blueb5">fingerprint</mat-icon>
+            <span class="menu-title">Registrar</span>
+        </button>
+        <button mat-menu-item (click)="navigateTo('/list-users')">
+            <mat-icon class="material-icons md-36 blueb5">format_list_bulleted</mat-icon>
+            <span class="menu-title">Listar</span>
+        </button>
+        <!-- <button mat-menu-item (click)="signOut()">
+          <mat-icon class="material-icons md-36" color="warn">logout</mat-icon>
+          <span class="menu-title">Salir</span>
+        </button> -->
+    </mat-menu>
+    <span class="material-icons md-48">face</span>
+    <span class="app-title">facegnition</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button aria-label="Salir" (click)="signOut()">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+<router-outlet></router-outlet>

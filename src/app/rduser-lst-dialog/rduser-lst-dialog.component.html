@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{ data.name }}</h1>
+<div mat-dialog-content>
+  <mat-list>
+    <div mat-subheader>Validaciones:</div>
+    <mat-list-item *ngFor="let validation of data.validations">
+      <img matListAvatar src="{{ validation.avatarpath }}" alt="">
+      <h3 matLine>  {{ validation.timest | date:"yyyy-MM-dd HH:mm:ss" }}</h3>
+      <mat-divider></mat-divider>
+      <br />
+    </mat-list-item>
+  </mat-list>
+</div>

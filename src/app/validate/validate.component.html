@@ -1,0 +1,46 @@
+<section class="pageheader">
+  <div class="example-label">Validar a una persona registrada.</div>
+</section>
+<mat-divider></mat-divider>
+<mat-card class="register-page">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Validar personas registradas.</mat-card-title>
+    <mat-card-subtitle>
+        Suba una foto en donde se vea el rostro de la persona registrada.
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="base64Img; else fakeImage" class="thumbnails">
+      <img [src]="base64Img" alt="" style="height:170px">
+    </div>
+    <ng-template #fakeImage>
+      <div class="thumbnails">
+        <img src="../../assets/add_photo.jpg" alt="" style="height:170px">
+      </div>
+    </ng-template>
+
+    <form class="register-form data-form" [formGroup]="validateForm" (ngSubmit)="onSubmit()">
+      <input type="file" class="file-input" accept="image/jpeg"
+        formControlName="image" (change)="handleFileInput($event)" #fileUpload>
+      <div class="file-upload">
+        <mat-form-field>
+          <input matInput [disabled]="true" [value]="fileName">
+        </mat-form-field>
+        <button type="button" mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+          <mat-icon>attach_file</mat-icon>
+        </button>
+      </div>
+      <mat-card-actions>
+        <button mat-raised-button type="button" (click)="resetForm()" [disabled]="!validateForm.dirty">
+          Limpiar
+        </button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!validateForm.valid">
+            Validar
+        </button>
+      </mat-card-actions>
+    </form>
+
+  </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,29 @@
+.example-header-image {
+  background-image: url("../../assets/account_circle_white_24dp.svg");
+  background-color: coral;
+  background-size: cover;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.mat-form-field {
+  margin: 0.5em;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-upload {
+  display: flex;
+  align-items: flex-end;
+}
+
+.upload-btn {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
