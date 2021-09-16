@@ -24,6 +24,7 @@ import { RduserLstDialogComponent } from './rduser-lst-dialog/rduser-lst-dialog.
 import { Page404Component } from './page404/page404.component';
 
 import { environment } from '../environments/environment';
+import { TodatePipe } from './shared/todate.pipe';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { environment } from '../environments/environment';
     RegisteredUserComponent,
     RduserLstDialogComponent,
     Page404Component,
+    TodatePipe,
   ],
   imports: [
     AmplifyUIAngularModule,
