@@ -26,6 +26,8 @@ Y deberá generar la distribución con:<br/>
 
 La aplicación web `demo` está alojada en [http://facegnition.ddns.net](http://facegnition.ddns.net)
 
+Release entregada a la Universidad: v1.0
+
 ## Back-end.
 
 Se puede ver el código back-end que del sistema en el repositorio de gitHub [facegnition-back-end](https://github.com/atomWeb/facegnition-back-end).
